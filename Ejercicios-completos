@@ -1,0 +1,51 @@
+function ensure(value) {
+        if(value === undefined){
+             throw new Error("ERRORRR");
+}
+  else{
+    return value;
+  }
+}
+
+// segundo
+
+function formatDate(userDate) {
+ 
+  var u = userDate.split('/', 3);
+  var date;
+  if(u[0].length ==1){
+
+   date = u[2]+"0"+u[0]+u[1];
+  }else if(u[1].length ==1){
+
+ 	date = u[2]+u[0]+"0"+u[1];
+  }else{
+
+  	date = u[2]+u[0]+u[1];
+}
+  	console.log(userDate);
+  	return date;
+}
+//tercero
+function removeProperty(obj, prop) {
+  if(obj.hasOwnProperty(prop)){
+    delete obj[prop];
+    return true;
+  }
+  else{
+  	return false;
+  }
+  
+}
+//cuarto 
+function registerHandlers() {
+  var as = document.getElementsByTagName('a');
+  for (let i = 0; i < as.length; i++) {
+    as[i].onclick = function() {
+      alert(i);
+      return false;
+    }
+  }
+}
+
+
