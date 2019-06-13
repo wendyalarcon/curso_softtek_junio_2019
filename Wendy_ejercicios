@@ -1,0 +1,56 @@
+EJERCICIO 1
+
+function ensure(value) {
+  if(value === undefined) {
+    throw new Error('no arguments');
+  }
+  return value;
+}
+**********************************************************
+
+EJERCICIO 2
+
+  function formatDate(userDate) {
+  userDate = new Date(userDate);
+  year= userDate.getFullYear().toString();
+  month = (userDate.getMonth() + 1).toString();
+  date = userDate.getDate().toString();
+
+  return year + (month=(month.length==1)?'0'+month:month) + (date=(date.length==1)?'0'+date:date);
+}
+
+console.log(formatDate("12/31/2014"));
+***********************************************************************************************************
+
+EJERCICIO 3
+
+function removeProperty(obj, prop) {
+  if (obj.hasOwnProperty(prop)) { 
+    delete obj[prop];
+    return true;
+  }
+
+  return false;
+}
+*************************************************************************************
+
+EJERCICIO 4
+
+function registerHandlers() {
+  var as = document.getElementsByTagName('a');
+  for (var i = 0; i < as.length; i++) {
+    as[i].setAttribute('data-index', i);
+    as[i].onclick = function() {
+      alert(this.getAttribute('data-index'));
+          }
+  }
+}
+
+/* HTML code for testing purposes (do not submit uncommented):
+<body>
+  In my life, I used the following web search engines:<br/>
+  <a href="//www.yahoo.com">Yahoo!</a><br/>
+  <a href="//www.altavista.com">AltaVista</a><br/>
+  <a href="//www.google.com">Google</a><br/>
+</body>
+*/
