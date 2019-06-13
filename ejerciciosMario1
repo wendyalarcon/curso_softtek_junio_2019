@@ -1,0 +1,58 @@
+//Implement the ensure function so that it throws an error if called without arguments or the argument is undefined.
+//Otherwise it should return the given value.
+function ensure(value) {
+      if(value===undefined){
+           throw new error();
+       }else{
+         return value;
+       }
+}
+
+console.log(ensure(7));
+
+
+//Write a function that converts user entered date formatted as M/D/YYYY to a format required by an API (YYYYMMDD). The parameter "userDate" and the return value are strings.
+//For example, it should convert user entered date "12/31/2014" to "20141231" suitable for the API.
+function formatDate(userDate) {
+  // format from M/D/YYYY to YYYYMMDD
+  let newdate= new Date(userDate);
+
+  let month = newdate.getMonth()+1;
+  let day = newdate.getDate();
+
+  if(month<10){
+       month="0"+month;
+     }
+  if(day<10){
+       day="0"+day;
+     }
+  let dateFormat = newdate.getFullYear()+''+month+''+day;
+  return dateFormat;
+}
+
+console.log(formatDate("12/31/2014"));
+
+//Implement the removeProperty function which takes an object and property name, and does the following:
+//If the object obj has a property prop, the function removes the property from the object and returns true; in all other cases it returns false.
+function removeProperty(obj, prop) {
+  if(obj.hasOwnProperty(prop)){
+       delete obj[prop];
+        return true;
+     }else{
+       return false;
+     }
+
+  return null;
+}
+
+//Fix the bugs in the registerHandlers function. An alert should display anchor's zero-based index within a document instead of following the link.
+//For example, in the document below, the alert should display "2" when Google anchor is clicked since it is the third anchor element in the document and its zero-based index is 2.
+function registerHandlers() {
+  var as = document.getElementsByTagName('a');
+  for (let i = 0; i < as.length; i++) {
+    as[i].onclick = function() {
+      alert(i);
+      return false;
+    }
+  }
+}
